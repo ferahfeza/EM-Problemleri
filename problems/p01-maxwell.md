@@ -11,7 +11,7 @@ $$
 Bir uzayda bir noktadan diğerine hareket ederken, diferansiyel uzunluk vektörü $d\vec{l}$ Kartezyan koordinatlarda aşağıdaki gibi tanımlanır:
 
 $$
-d\vec{l} = dx\, \mathbf{a}_x + dy\, \mathbf{a}_y + dz\, \mathbf{a}_z
+d\vec{l} = dx\mathbf{a}_x + dy\mathbf{a}_y + dz\mathbf{a}_z
 $$
 
 **Problem:**
@@ -32,7 +32,7 @@ $$
 
 Diferansiyel uzunluk vektörü:
 $$
-d\vec{l} = dx\, \mathbf{a}_x + dy\, \mathbf{a}_y + dz\, \mathbf{a}_z
+d\vec{l} = dx\mathbf{a}_x + dy\mathbf{a}_y + dz\mathbf{a}_z
 $$
 Parametreye göre türev alınırsa:
 $$
@@ -40,7 +40,7 @@ dx = 3\,dt,\quad dy = 4\,dt,\quad dz = 2\,dt
 $$
 Dolayısıyla:
 $$
-d\vec{l} = 3\,dt\, \mathbf{a}_x + 4\,dt\, \mathbf{a}_y + 2\,dt\, \mathbf{a}_z
+d\vec{l} = 3dt\mathbf{a}_x + 4dt\mathbf{a}_y + 2dt\mathbf{a}_z
 $$
 
 ---
@@ -58,7 +58,7 @@ c) Çizgisel integralin kurulması
 
 Vektör alanı:
 $$
-\vec{A} = x\, \mathbf{a}_x + y\, \mathbf{a}_y + z\, \mathbf{a}_z
+\vec{A} = x\mathbf{a}_x + y\mathbf{a}_y + z\mathbf{a}_z
 $$
 Çizgisel integral:
 $$
@@ -66,7 +66,7 @@ $$
 $$
 Parametrelenmiş yol için:
 $$
-\vec{A}(t) = (1 + 3t)\, \mathbf{a}_x + (2 + 4t)\, \mathbf{a}_y + (3 + 2t)\, \mathbf{a}_z
+\vec{A}(t) = (1 + 3t)\mathbf{a}_x + (2 + 4t)\mathbf{a}_y + (3 + 2t)\mathbf{a}_z
 $$
 $$
 d\vec{l} = 3\,dt\,\mathbf{a}_x + 4\,dt\,\mathbf{a}_y + 2\,dt\,\mathbf{a}_z
