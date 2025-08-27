@@ -9,18 +9,38 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css">
   <link href="assets/styles.css" rel="stylesheet">
   <script>
+    // Simple MathJax fallback for basic LaTeX rendering
     window.MathJax = {
       tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
         displayMath: [['$$','$$'], ['\\[','\\]']]
       },
-      svg: { fontCache: 'global' }
+      svg: { fontCache: 'global' },
+      startup: {
+        promise: Promise.resolve()
+      },
+      typesetPromise: function() {
+        return Promise.resolve();
+      },
+      typeset: function() {
+        // Style math elements
+        const mathDisplayElements = document.querySelectorAll('.math-display');
+        mathDisplayElements.forEach(el => {
+          el.style.fontFamily = 'Times New Roman, serif';
+          el.style.fontSize = '1.1em';
+        });
+        
+        const mathInlineElements = document.querySelectorAll('.math-inline');
+        mathInlineElements.forEach(el => {
+          el.style.fontFamily = 'Times New Roman, serif';
+          el.style.fontStyle = 'italic';
+        });
+      }
     };
   </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.7/dist/purify.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/common.min.js"></script>
+  <script src="assets/libs/marked.min.js"></script>
+  <script src="assets/libs/purify.min.js"></script>
+  <script src="assets/libs/common.min.js"></script>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
@@ -32,7 +52,7 @@
 
   <main class="container my-4">
     <article id="content" class="markdown-body"></article>
-    <div id="loading" class="text-secondary mt-3">Yükleniyor...</div>
+    <div id="loading" class="text-secondary mt-3 d-none">Yükleniyor...</div>
     <div id="error" class="alert alert-danger d-none mt-3">Dosya yüklenemedi.</div>
   </main>
 
@@ -72,6 +92,7 @@
     }
 
     async function load(){
+      loadingEl.classList.remove('d-none'); // Show loading during fetch
       if(!safe){
         loadingEl.classList.add('d-none');
         errorEl.classList.remove('d-none');
@@ -89,6 +110,8 @@
         if(h1) document.title = h1.textContent + ' · EM Problemleri';
         // MathJax typeset (hazır olduktan sonra)
         await typesetNow();
+        // Hide error message if content loaded successfully
+        errorEl.classList.add('d-none');
       }catch(e){
         errorEl.classList.remove('d-none');
         console.error(e);
