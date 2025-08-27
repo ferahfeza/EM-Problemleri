@@ -1,9 +1,9 @@
 [
   {
     "id": "p01",
-    "title": "Maxwell Denklemleri ve Düzlemsel Dalga",
+    "title": "Kartezyen Koordinat Sistemi",
     "file": "problems/p01-maxwell.md",
-    "tags": ["temel", "maxwell", "dalga"],
+    "tags": ["temel", "koordinat sistemleri"],
     "date": "27.08.2025"
   }
 ]
