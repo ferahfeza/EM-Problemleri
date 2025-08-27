@@ -1,2 +1,18 @@
 .markdown-body img { max-width: 100%; height: auto; }
 .markdown-body { line-height: 1.7; }
+.math-display { 
+  text-align: center; 
+  margin: 1em 0; 
+  padding: 0.5em; 
+  background-color: #f8f9fa; 
+  border-left: 4px solid #007bff; 
+  font-family: 'Times New Roman', serif; 
+  font-size: 1.1em;
+}
+.math-inline { 
+  font-family: 'Times New Roman', serif; 
+  font-style: italic; 
+  background-color: #f8f9fa; 
+  padding: 0.1em 0.3em; 
+  border-radius: 3px;
+}
