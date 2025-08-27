@@ -54,6 +54,23 @@
       }
     });
 
+    async function typesetNow() {
+      if (!window.MathJax) return;
+      try {
+        // MathJax v3: hazır olana kadar bekle
+        if (MathJax.startup && MathJax.startup.promise) {
+          await MathJax.startup.promise;
+        }
+        if (MathJax.typesetPromise) {
+          await MathJax.typesetPromise([contentEl]);
+        } else if (MathJax.typeset) {
+          MathJax.typeset([contentEl]);
+        }
+      } catch (e) {
+        console.error('MathJax typeset error:', e);
+      }
+    }
+
     async function load(){
       if(!safe){
         loadingEl.classList.add('d-none');
@@ -70,10 +87,8 @@
         // Başlıktan sayfa başlığı üret
         const h1 = contentEl.querySelector('h1');
         if(h1) document.title = h1.textContent + ' · EM Problemleri';
-        // MathJax typeset
-        if(window.MathJax && MathJax.typesetPromise){
-          await MathJax.typesetPromise([contentEl]);
-        }
+        // MathJax typeset (hazır olduktan sonra)
+        await typesetNow();
       }catch(e){
         errorEl.classList.remove('d-none');
         console.error(e);
