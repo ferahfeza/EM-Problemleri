@@ -6,12 +6,12 @@ Burada $dx$, $dy$ ve $dz$, sırasıyla x, y ve z eksenlerindeki küçük değiş
 
 ---
 
-## Kartezyen Koordinatlarda Diferansiyel Uzunluk Vektörü Problemi
+$$
 
 Bir uzayda bir noktadan diğerine hareket ederken, diferansiyel uzunluk vektörü $d\vec{l}$ Kartezyan koordinatlarda aşağıdaki gibi tanımlanır:
 
 $$
-d\vec{l} = dx\,\mathbf{a}_x + dy\,\mathbf{a}_y + dz\,\mathbf{a}_z
+d\vec{l} = dx\, \mathbf{a}_x + dy\, \mathbf{a}_y + dz\, \mathbf{a}_z
 $$
 
 **Problem:**
@@ -22,17 +22,17 @@ c) Eğer yol boyunca bir vektör alanı $\vec{A} = x\mathbf{a}_x + y\mathbf{a}_y
 
 ---
 
-### Çözüm
+$$
 
 a) Parçacığın izlediği yol boyunca diferansiyel uzunluk vektörü
 
 Parçacık doğrusal bir yol izlediği için, yolun parametrelenmesi:
 $$(x, y, z) = (1, 2, 3) + t\, (4-1, 6-2, 5-3) = (1 + 3t,\, 2 + 4t,\, 3 + 2t)$$
-Burada $0 \leq t \leq 1$.
+$$
 
 Diferansiyel uzunluk vektörü:
 $$
-d\vec{l} = dx\,\mathbf{a}_x + dy\,\mathbf{a}_y + dz\,\mathbf{a}_z
+d\vec{l} = dx\, \mathbf{a}_x + dy\, \mathbf{a}_y + dz\, \mathbf{a}_z
 $$
 Parametreye göre türev alınırsa:
 $$
@@ -40,12 +40,12 @@ dx = 3\,dt,\quad dy = 4\,dt,\quad dz = 2\,dt
 $$
 Dolayısıyla:
 $$
-d\vec{l} = 3\,dt\,\mathbf{a}_x + 4\,dt\,\mathbf{a}_y + 2\,dt\,\mathbf{a}_z
+d\vec{l} = 3\,dt\, \mathbf{a}_x + 4\,dt\, \mathbf{a}_y + 2\,dt\, \mathbf{a}_z
 $$
 
 ---
 
-b) Parçacığın toplam yol uzunluğu
+$$
 
 Toplam yol uzunluğu iki nokta arasındaki mesafenin büyüklüğüdür:
 $$
@@ -58,7 +58,7 @@ c) Çizgisel integralin kurulması
 
 Vektör alanı:
 $$
-\vec{A} = x\,\mathbf{a}_x + y\,\mathbf{a}_y + z\,\mathbf{a}_z
+\vec{A} = x\, \mathbf{a}_x + y\, \mathbf{a}_y + z\, \mathbf{a}_z
 $$
 Çizgisel integral:
 $$
@@ -66,7 +66,7 @@ $$
 $$
 Parametrelenmiş yol için:
 $$
-\vec{A}(t) = (1 + 3t)\,\mathbf{a}_x + (2 + 4t)\,\mathbf{a}_y + (3 + 2t)\,\mathbf{a}_z
+\vec{A}(t) = (1 + 3t)\, \mathbf{a}_x + (2 + 4t)\, \mathbf{a}_y + (3 + 2t)\, \mathbf{a}_z
 $$
 $$
 d\vec{l} = 3\,dt\,\mathbf{a}_x + 4\,dt\,\mathbf{a}_y + 2\,dt\,\mathbf{a}_z
